@@ -1,0 +1,52 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\jkl21\Desktop\实训及练习\单片机练习\温度传感器\DS18B20\DS18B20.uvproj
+Project File Date:  08/17/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+Target has no object modules
+Target not created
+compiling DS18B20.c...
+DS18B20.C(10): error C141: syntax error near '}'
+DS18B20.c - 1 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling DS18B20.c...
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20READTEMP?DS18B20
+*** WARNING L10: CANNOT DETERMINE ROOT SEGMENT
+Program Size: data=8.0 xdata=0 code=177
+"DS18B20" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling DS18B20.c...
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DS18B20READTEMP?DS18B20
+*** WARNING L10: CANNOT DETERMINE ROOT SEGMENT
+Program Size: data=8.0 xdata=0 code=177
+"DS18B20" - 0 Error(s), 2 Warning(s).
+compiling main.c...
+MAIN.C(21): error C202: 'flot': undefined identifier
+MAIN.C(21): error C141: syntax error near 'tp'
+MAIN.C(27): error C202: 'tp': undefined identifier
+MAIN.C(28): error C202: 'tp': undefined identifier
+MAIN.C(33): error C202: 'tp': undefined identifier
+MAIN.C(34): error C202: 'tp': undefined identifier
+main.c - 6 Error(s), 0 Warning(s).
+compiling main.c...
+main.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=21.0 xdata=0 code=1420
+"DS18B20" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=21.0 xdata=0 code=1420
+creating hex file from "DS18B20"...
+"DS18B20" - 0 Error(s), 0 Warning(s).

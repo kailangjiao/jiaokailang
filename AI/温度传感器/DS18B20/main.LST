@@ -1,0 +1,97 @@
+C51 COMPILER V9.01   MAIN                                                                  08/18/2019 22:48:33 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include"reg51.h"
+   2          #include"ds18b20.h"
+   3          
+   4          sbit LSA=P2^2;
+   5          sbit LSB=P2^3;
+   6          sbit LSC=P2^4;
+   7          
+   8          void delay(u16 i)
+   9          {
+  10   1              while(i--);     
+  11   1      }
+  12          
+  13          
+  14          u8 code smgduan[10]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,
+  15          0x7d,0x07,0x7f,0x6f};
+  16          
+  17          u8 DisplayData[8];
+  18          
+  19          void datapros(int temp)
+  20          {
+  21   1                      float tp;
+  22   1              if(temp<0)
+  23   1              {
+  24   2                  DisplayData[0]=0x40;
+  25   2                      temp=temp-1;
+  26   2                      temp=~temp;
+  27   2                      tp=temp;
+  28   2                      temp=tp*0.625*100+0.5;
+  29   2              }
+  30   1              else
+  31   1              {
+  32   2                      DisplayData[0]=0x00;
+  33   2                      tp=temp;
+  34   2                      temp=tp*0.625*100+0.5;  
+  35   2              }
+  36   1                      DisplayData[1]=smgduan[temp/10000];
+  37   1                      DisplayData[2]=smgduan[temp%10000/1000];
+  38   1                  DisplayData[3]=smgduan[temp%10000%1000/100]|0x80;
+  39   1                      DisplayData[4] = smgduan[temp % 100 / 10];
+  40   1                      DisplayData[5] = smgduan[temp % 10];
+  41   1              }
+  42          
+  43          void digdisplay()
+  44          {
+  45   1              u8 i;
+  46   1              for(i=0;i<6;i++)
+  47   1              {
+  48   2                      switch(i)
+  49   2                      {
+  50   3                              case 0: LSA=0;LSB=0;LSC=0; break;
+  51   3                              case 1: LSA=1;LSB=0;LSC=0; break;
+  52   3                              case 2: LSA=0;LSB=1;LSC=0; break;
+  53   3                              case 3: LSA=1;LSB=1;LSC=0; break;
+  54   3                              case 4: LSA=0;LSB=0;LSC=1; break;
+  55   3                              case 5: LSA=1;LSB=0;LSC=1; break;
+C51 COMPILER V9.01   MAIN                                                                  08/18/2019 22:48:33 PAGE 2   
+
+  56   3                      }
+  57   2                      P0=     DisplayData[5-i];
+  58   2                      delay(100);
+  59   2                      P0=0x00;
+  60   2              }
+  61   1      }
+  62          
+  63          void main()
+  64          {
+  65   1              while(1)
+  66   1              {
+  67   2              datapros(ds18b20readtemp());
+  68   2              digdisplay();   
+  69   2              }
+  70   1      }
+  71          
+  72           
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    364    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
