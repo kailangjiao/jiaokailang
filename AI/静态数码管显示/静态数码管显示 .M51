@@ -1,0 +1,80 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/10/2019  10:44:38  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\\C51\BIN\BL51.EXE 静态数码管显示.obj TO 静态数码管显示 
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  静态数码管显示.obj (静态数_牍_显示)
+  D:\\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  静态数码管显示  (静态数_牍_显示)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0010H     UNIT         ?CO?静态数_牍_显示
+            CODE    0810H     000EH     UNIT         ?PR?MAIN?静态数_牍_显示
+            CODE    081EH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   静态数码管显示  (静态数_牍_显示)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?静态数_牍_显示
+
+?PR?MAIN?静态数_牍_显示
+  +--> ?CO?静态数_牍_显示
+
+
+
+SYMBOL TABLE OF MODULE:  静态数码管显示  (静态数_牍_显示)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        静态数_牍_显示
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:0810H         PUBLIC        main
+  B:00A0H.2       PUBLIC        LSA
+  B:00A0H.3       PUBLIC        LSB
+  B:00A0H.4       PUBLIC        LSC
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/10/2019  10:44:38  PAGE 2
+
+
+  C:0800H         PUBLIC        smgduan
+  -------         PROC          MAIN
+  C:0810H         LINE#         9
+  C:0810H         LINE#         10
+  C:0810H         LINE#         11
+  C:0816H         LINE#         12
+  C:081DH         LINE#         14
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        静态数_牍_显示
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 001EH BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=45
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

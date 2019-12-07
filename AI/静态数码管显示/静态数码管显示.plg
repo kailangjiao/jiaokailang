@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\jkl21\Desktop\实训及练习\单片机练习\静态数码管显示\静态数码管显示 .uvproj
+Project File Date:  07/10/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 静态数码管显示.c...
+linking...
+Program Size: data=9.0 xdata=0 code=45
+creating hex file from "静态数码管显示"...
+"静态数码管显示" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling 静态数码管显示.c...
+linking...
+Program Size: data=10.0 xdata=0 code=46
+creating hex file from "静态数码管显示"...
+"静态数码管显示" - 0 Error(s), 0 Warning(s).
